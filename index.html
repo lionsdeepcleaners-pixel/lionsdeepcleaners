@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lions Deep Cleaners | Premium Hygiene & Pest Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --navy: #0b2d4a;
+            --dark-navy: #061a2b;
+            --gold: #f6b93b;
+            --white: #ffffff;
+            --soft-gold: #fef9ef;
+        }
+
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif; 
+            background-color: var(--dark-navy); 
+            color: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        .hero { 
+            background: linear-gradient(180deg, #1e3c72 0%, #0b2d4a 100%);
+            padding: 80px 20px; 
+            text-align: center; 
+        }
+
+        .logo-img {
+            width: 180px;
+            height: auto; 
+            border-radius: 12px;
+            background: white;
+            padding: 10px;
+            margin-bottom: 20px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .section-title { text-align: center; font-size: 32px; margin: 50px 0 10px; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; }
+        .sub-title { text-align: center; opacity: 0.7; margin-bottom: 40px; }
+
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 25px; padding: 0 20px; max-width: 1200px; margin: auto; 
+        }
+
+        .card { 
+            background: var(--white); 
+            color: var(--dark-navy); 
+            padding: 25px; 
+            border-radius: 15px; 
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border-bottom: 5px solid var(--gold);
+            position: relative;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .card i { font-size: 35px; color: var(--navy); margin-bottom: 15px; }
+        .card h3 { margin: 10px 0; font-size: 22px; font-weight: 700; }
+
+        .process-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            text-align: left;
+        }
+
+        .card.active { background: var(--soft-gold); }
+        .card.active .process-content {
+            max-height: 500px; 
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .process-list { list-style: none; padding: 0; margin: 0; }
+        .process-list li { padding: 6px 0; font-weight: 500; font-size: 15px; color: #444; }
+        .process-list li::before { content: "●"; color: var(--gold); margin-right: 8px; }
+
+        .booking-section { background: rgba(255, 255, 255, 0.03); padding: 80px 20px; margin-top: 60px; }
+        .form-container { max-width: 550px; margin: auto; background: var(--navy); padding: 40px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); border: 1px solid rgba(246, 185, 59, 0.1); }
+        
+        input, select, textarea { 
+            width: 100%; padding: 15px; margin: 12px 0; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); 
+            background: #061a2b; color: white; box-sizing: border-box; font-size: 16px;
+        }
+
+        .btn { background: var(--gold); color: var(--dark-navy); font-weight: 800; padding: 18px; border: none; width: 100%; border-radius: 8px; cursor: pointer; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .btn:hover { background: #e5a92a; transform: translateY(-2px); }
+        
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; text-decoration: none; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        footer { text-align: center; padding: 50px; opacity: 0.8; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.05); }
+        .location-tag { color: var(--gold); margin-top: 10px; font-weight: bold; }
+
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+            .logo-img { width: 140px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <img src="logo.png" alt="Lions Deep Cleaners Logo" class="logo-img">
+    <h1 style="font-size: 38px; margin-bottom: 5px;">Lions Deep Cleaners</h1>
+    <p style="font-size: 18px; font-weight: 300;">Premium Hygiene & Specialized Cleaning Experts</p>
+</div>
+
+<h2 class="section-title">Our Specialist Services</h2>
+<p class="sub-title">Select a service to see our professional 4-step process</p>
+
+<div class="grid">
+    <div class="card" onclick="toggleCard(this)">
+        <i class="fas fa-broom"></i>
+        <h3>Carpet Cleaning</h3>
+        <div class="process-content">
+            <ul class="process-list">
+                <li>Industrial debris vacuuming</li>
+                <li>Targeted stain pre-treatment</li>
+                <li>High-pressure steam extraction</li>
+                <li>Medical-grade deodorizing</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+        <i class="fas fa-couch"></i>
+        <h3>Couch & Upholstery</h3>
+        <div class="process-content">
+            <ul class="process-list">
+                <li>Deep allergen extraction</li>
+                <li>Fabric-safe shampooing</li>
+                <li>Mechanical scrub & rinse</li>
+                <li>Fiber protection finish</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+        <i class="fas fa-bed"></i>
+        <h3>Mattress Cleaning</h3>
+        <div class="process-content">
+            <ul class="process-list">
+                <li>Industrial dust & skin cell extraction</li>
+                <li>Deep-fiber steam cleaning</li>
+                <li>Stain & allergen neutralization</li>
+                <li>UV-C bacterial sanitizing finish</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+        <i class="fas fa-shield-halved"></i>
+        <h3>Leather Care</h3>
+        <div class="process-content">
+            <ul class="process-list">
+                <li>pH-balanced deep cleaning</li>
+                <li>Soil & body oil removal</li>
+                <li>Premium cream conditioning</li>
+                <li>Protective buffing & shine</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+        <i class="fas fa-align-justify"></i>
+        <h3>Curtains (On-Rail)</h3>
+        <div class="process-content">
+            <ul class="process-list">
+                <li>Vertical dust extraction</li>
+                <li>On-the-rail steam sanitizing</li>
+                <li>Crease removal & shaping</li>
+                <li>Fabric refreshing treatment</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+        <i class="fas fa-border-all"></i>
+        <h3>Window Blinds</h3>
+        <div class="process-content">
+            <ul class="process-list">
+                <li>Detailed slat-by-slat dusting</li>
+                <li>Deep grime & grease removal</li>
+                <li>Mechanism lubrication</li>
+                <li>Anti-static dust repellent</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+        <i class="fas fa-th"></i>
+        <h3>All Floor Types</h3>
+        <div class="process-content">
+            <ul class="process-list">
+                <li>Tile & Grout deep scrubbing</li>
+                <li>Vinyl/PVC restoration</li>
+                <li>Hardwood deep clean & polish</li>
+                <li>Natural stone sealing</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+        <i class="fas fa-bug-slash"></i>
+        <h3>Pest Management</h3>
+        <div class="process-content">
+            <ul class="process-list">
+                <li>Full property inspection</li>
+                <li>Targeted baiting & gel tech</li>
+                <li>Residual spray barrier</li>
+                <li>Long-term prevention plan</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card" onclick="toggleCard(this)">
+        <i class="fas fa-car-rear"></i>
+        <h3>Car Interior</h3>
+        <div class="process-content">
+            <ul class="process-list">
+                <li>Full seat & carpet extraction</li>
+                <li>Roof lining & panel detailing</li>
+                <li>AC duct disinfection</li>
+                <li>Leather/Fabric conditioning</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="booking-section" id="booking">
+    <div class="form-container">
+        <h2 style="text-align: center; color: var(--gold); margin-top: 0;">Quick Quote Request</h2>
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="text" id="area" placeholder="Area (e.g. Sandton, Alex, Midrand)" required>
+        <select id="service">
+            <optgroup label="Upholstery & Fabrics">
+                <option>Couch / Upholstery</option>
+                <option>Carpet Cleaning</option>
+                <option>Mattress Cleaning</option>
+                <option>Leather Care</option>
+                <option>Curtains (On-Rail)</option>
+                <option>Window Blinds</option>
+            </optgroup>
+            <optgroup label="Specialized">
+                <option>All Floor Types</option>
+                <option>Pest Control</option>
+                <option>Car Interior</option>
+                <option>Office Cleaning</option>
+                <option>Post-Construction</option>
+            </optgroup>
+        </select>
+        <textarea id="notes" rows="3" placeholder="Describe items (e.g. 5-seater couch, 2 bedrooms)"></textarea>
+        <button class="btn" onclick="sendWhatsApp()">Get My Quote via WhatsApp</button>
+    </div>
+</div>
+
+<a href="https://wa.me/27729990136" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<footer>
+    &copy; 2026 Lions Deep Cleaners | Premium Hygiene & Pest Management Solutions
+    <div class="location-tag">Serving Sandton, Alexandra, and Greater Johannesburg</div>
+</footer>
+
+<script>
+    function toggleCard(card) {
+        const isActive = card.classList.contains('active');
+        document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+        if (!isActive) card.classList.add('active');
+    }
+
+    function sendWhatsApp() {
+        const name = document.getElementById('name').value;
+        const area = document.getElementById('area').value;
+        const service = document.getElementById('service').value;
+        const notes = document.getElementById('notes').value;
+
+        if(!name || !area) { 
+            alert("Please provide your name and area so we can assist you better."); 
+            return; 
+        }
+
+        const message = `*Lions Deep Cleaners Inquiry*%0A%0A*Name:* ${name}%0A*Area:* ${area}%0A*Service:* ${service}%0A*Notes:* ${notes}`;
+        window.open(`https://wa.me/27729990136?text=${message}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
