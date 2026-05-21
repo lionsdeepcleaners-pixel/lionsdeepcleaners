@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ducks Holdings (Pty) Ltd | Multi-Service Corporate Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#09090B',
+                        brandCard: '#0C0C0F',
+                        brandPanel: '#111115',
+                        brandAccent: '#00FF66',
+                        brandBorder: '#1E1E24',
+                        brandBorderLight: '#27272A',
+                        brandTextMuted: '#A1A1AA',
+                        brandTextDeep: '#52525B'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .scrollbar-none::-webkit-scrollbar { display: none; }
+        .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-brandDark text-[#F4F4F5] font-sans antialiased selection:bg-brandAccent selection:text-brandDark relative">
+
+    <!-- WhatsApp Floating Action Button -->
+    <a 
+        href="https://wa.me/27725101430" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="fixed bottom-8 right-8 z-40 bg-brandAccent text-brandDark p-4 hover:bg-white transition-all duration-300 flex items-center justify-center border border-brandAccent shadow-2xl"
+        aria-label="Contact Ducks via WhatsApp Desk"
+    >
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.457L0 24zm6.59-4.846c1.6.95 3.498 1.451 5.411 1.451 5.505 0 9.984-4.479 9.988-9.984.002-2.67-1.022-5.173-2.885-7.038C17.306 1.717 14.804.693 12.13.693c-5.514 0-10.005 4.479-10.008 9.984-.001 1.914.499 3.79 1.446 5.389L2.516 22.12l6.131-1.61z"/>
+        </svg>
+    </a>
+
+    <!-- Executive Header -->
+    <header class="border-b border-brandBorder bg-brandDark sticky top-0 z-30">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-brandAccent flex items-center justify-center font-black text-brandDark text-lg tracking-tighter">
+                    DH
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg font-black tracking-tighter uppercase text-white leading-none">DUCKS</span>
+                    <span class="text-[10px] font-bold tracking-[0.25em] text-brandTextMuted uppercase leading-none mt-1">HOLDINGS</span>
+                </div>
+            </div>
+            <div>
+                <button 
+                    onclick="forceScrollTo('intake')" 
+                    class="bg-transparent border border-brandAccent text-brandAccent hover:bg-brandAccent hover:text-brandDark px-6 py-3 text-xs font-bold uppercase tracking-widest transition-all duration-300"
+                >
+                    Request Quote
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub-Page Directory Touch Bar -->
+    <section class="bg-brandPanel border-b border-brandBorder py-4 sticky top-24 z-30 overflow-x-auto whitespace-nowrap scrollbar-none">
+        <div class="max-w-7xl mx-auto px-6 flex items-center space-x-8 text-xs font-bold uppercase tracking-widest">
+            <span class="text-brandTextDeep text-[10px] border border-brandBorderLight px-2 py-1 flex items-center gap-1.5 font-mono">
+                <span class="w-1.5 h-1.5 bg-brandAccent"></span>EXPLORE SECTORS
+            </span>
+            <button onclick="openModal('software')" class="text-brandTextMuted hover:text-brandAccent border-b-2 border-transparent hover:border-brandAccent pb-1 transition-all uppercase tracking-widest">1. Digital & AI</button>
+            <button onclick="openModal('accounting')" class="text-brandTextMuted hover:text-brandAccent border-b-2 border-transparent hover:border-brandAccent pb-1 transition-all uppercase tracking-widest">2. Accounting & Tax</button>
+            <button onclick="openModal('csi')" class="text-brandTextMuted hover:text-brandAccent border-b-2 border-transparent hover:border-brandAccent pb-1 transition-all uppercase tracking-widest">3. Corporate CSI</button>
+            <button onclick="openModal('civil')" class="text-brandTextMuted hover:text-brandAccent border-b-2 border-transparent hover:border-brandAccent pb-1 transition-all uppercase tracking-widest">4. Civil Infrastructure</button>
+            <button onclick="openModal('cleaning')" class="text-brandTextMuted hover:text-brandAccent border-b-2 border-transparent hover:border-brandAccent pb-1 transition-all uppercase tracking-widest">5. Ducks Deep</button>
+            <button onclick="openModal('consulting')" class="text-brandTextMuted hover:text-brandAccent border-b-2 border-transparent hover:border-brandAccent pb-1 transition-all uppercase tracking-widest">6. Consultation</button>
+            <button onclick="openModal('insurance')" class="text-brandTextMuted hover:text-brandAccent border-b-2 border-transparent hover:border-brandAccent pb-1 transition-all uppercase tracking-widest">7. Risk & Insurance</button>
+            <button onclick="openModal('runners')" class="text-brandTextMuted hover:text-brandAccent border-b-2 border-transparent hover:border-brandAccent pb-1 transition-all uppercase tracking-widest">8. Town Runners</button>
+        </div>
+    </section>
+
+    <!-- Hero Frame -->
+    <section class="max-w-7xl mx-auto px-6 py-24 lg:py-32 border-b border-brandBorder">
+        <div class="max-w-5xl">
+            <div class="inline-flex items-center space-x-2 border border-brandBorderLight bg-brandPanel px-3 py-1.5 mb-8">
+                <span class="w-2 h-2 bg-brandAccent"></span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-brandTextMuted">
+                    High-Contrast Corporate Architecture
+                </span>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-black tracking-tighter uppercase text-white mb-8 leading-[0.9]">
+                Unified Architecture. <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#D4D4D8] to-brandTextDeep">Absolute Execution.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-brandTextMuted font-light max-w-3xl leading-relaxed mb-12">
+                Ducks Holdings (Pty) Ltd dictates multidisciplinary corporate solutions. We engineer complex digital infrastructure, process rigid financial compliance, manage structural civil builds, and direct localized B2B logistical networks across South Africa.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button onclick="forceScrollTo('intake')" class="bg-white text-brandDark font-bold uppercase text-xs tracking-widest px-8 py-4 hover:bg-brandAccent text-center transition-all">
+                    Initiate Project Intake
+                </button>
+                <button onclick="forceScrollTo('sectors-grid')" class="border border-brandBorderLight text-white font-bold uppercase text-xs tracking-widest px-8 py-4 hover:border-white text-center transition-all">
+                    Explore Core Sectors
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Profile -->
+    <section class="bg-[#0E0E11] border-b border-brandBorder py-24">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            <div class="lg:col-span-1 border-l-4 border-brandAccent pl-6">
+                <span class="text-xs font-bold uppercase tracking-widest text-brandTextDeep block font-mono">Executive Directive</span>
+                <h2 class="text-4xl font-black tracking-tight text-white uppercase mt-2">N. Hlavathi</h2>
+                <p class="text-xs font-bold tracking-widest text-brandAccent uppercase mt-1">Founder & Chief Executive Officer</p>
+            </div>
+            <div class="lg:col-span-2 text-lg text-[#D4D4D8] font-light leading-relaxed space-y-6">
+                <p>
+                    "At Ducks Holdings, our mandate is absolute system integration. We engineered this multi-service vehicle to eliminate operational silos, ensuring that corporate entities, state facilities, and regional networks operate on a singular baseline of structural reliability."
+                </p>
+                <p class="text-base text-brandTextMuted">
+                    "Whether we are constructing web applications embedded with secure real-time tracking, finalizing corporate tax clearances, rehabilitating civic infrastructure, or deploying specialized cleaning deployments under Ducks Deep—operational precision remains our non-negotiable metric."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Operations Service Grid -->
+    <section id="sectors-grid" class="max-w-7xl mx-auto px-6 py-24 border-b border-brandBorder">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+            <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-brandTextDeep font-mono">Operations Grid</span>
+                <h2 class="text-3xl font-black text-white uppercase mt-2">Core Sectors Under Management</h2>
+            </div>
+            <p class="text-sm text-brandTextMuted max-w-md mt-4 md:mt-0 font-light">
+                Clicking any sector block opens an in-depth operational blueprint breaking down our technical service parameters directly.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- 01. Digital & AI Systems -->
+            <div onclick="openModal('software')" class="border border-brandBorder p-8 bg-brandCard flex flex-col justify-between hover:border-brandAccent transition-all group cursor-pointer">
+                <div>
+                    <span class="text-xs font-mono font-bold text-brandTextDeep group-hover:text-brandAccent">01 // DIGITAL SYSTEM DESIGN</span>
+                    <h3 class="text-lg font-bold text-white uppercase mt-3 mb-4">Digital & AI Systems</h3>
+                    <p class="text-xs text-brandTextMuted font-light leading-relaxed">Bespoke applications, autonomous agents, and telemetry frameworks available via deployment or lease modules.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-[#16161A] flex justify-end">
+                    <span class="text-[10px] font-black tracking-widest text-brandTextMuted uppercase group-hover:text-brandAccent transition-colors">
+                        View Blueprint &rarr;
+                    </span>
+                </div>
+            </div>
+            
+            <!-- 02. Accounting & Tax Compliance -->
+            <div onclick="openModal('accounting')" class="border border-brandBorder p-8 bg-brandCard flex flex-col justify-between hover:border-brandAccent transition-all group cursor-pointer">
+                <div>
+                    <span class="text-xs font-mono font-bold text-brandTextDeep group-hover:text-brandAccent">02 // FINANCIAL MANAGEMENT</span>
+                    <h3 class="text-lg font-bold text-white uppercase mt-3 mb-4">Accounting & Tax</h3>
+                    <p class="text-xs text-brandTextMuted font-light leading-relaxed">Audited financials, general ledger compliance tracking, corporate tax filings, and regulatory alignments.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-[#16161A] flex justify-end">
+                    <span class="text-[10px] font-black tracking-widest text-brandTextMuted uppercase group-hover:text-brandAccent transition-colors">
+                        View Blueprint &rarr;
+                    </span>
+                </div>
+            </div>
+
+            <!-- 03. Corporate Social Investment (CSI) -->
+            <div onclick="openModal('csi')" class="border border-brandBorder p-8 bg-brandCard flex flex-col justify-between hover:border-brandAccent transition-all group cursor-pointer">
+                <div>
+                    <span class="text-xs font-mono font-bold text-brandTextDeep group-hover:text-brandAccent">03 // CIVIC INVESTMENT</span>
+                    <h3 class="text-lg font-bold text-white uppercase mt-3 mb-4">Corporate CSI</h3>
+                    <p class="text-xs text-brandTextMuted font-light leading-relaxed">Direct community infrastructure deployments and localized youth resource distribution frameworks.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-[#16161A] flex justify-end">
+                    <span class="text-[10px] font-black tracking-widest text-brandTextMuted uppercase group-hover:text-brandAccent transition-colors">
+                        View Blueprint &rarr;
+                    </span>
+                </div>
+            </div>
+
+            <!-- 04. Civil & Maintenance -->
+            <div onclick="openModal('civil')" class="border border-brandBorder p-8 bg-brandCard flex flex-col justify-between hover:border-brandAccent transition-all group cursor-pointer">
+                <div>
+                    <span class="text-xs font-mono font-bold text-brandTextDeep group-hover:text-brandAccent">04 // INFRASTRUCTURE BUILD</span>
+                    <h3 class="text-lg font-bold text-white uppercase mt-3 mb-4">Civil & Maintenance</h3>
+                    <p class="text-xs text-brandTextMuted font-light leading-relaxed">Heavy earthworks, foundations casting, fluid reticulation engineering, and structural clinic upgrades.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-[#16161A] flex justify-end">
+                    <span class="text-[10px] font-black tracking-widest text-brandTextMuted uppercase group-hover:text-brandAccent transition-colors">
+                        View Blueprint &rarr;
+                    </span>
+                </div>
+            </div>
+
+            <!-- 05. Ducks Deep -->
+            <div onclick="openModal('cleaning')" class="border border-brandBorder p-8 bg-brandCard flex flex-col justify-between hover:border-brandAccent transition-all group cursor-pointer">
+                <div>
+                    <span class="text-xs font-mono font-bold text-brandTextDeep group-hover:text-brandAccent">05 // SANITATION ARM</span>
+                    <h3 class="text-lg font-bold text-white uppercase mt-3 mb-4">Ducks Deep</h3>
+                    <p class="text-xs text-brandTextMuted font-light leading-relaxed">High-caliber post-construction handovers, building finalizations, and commercial steam extractions.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-[#16161A] flex justify-end">
+                    <span class="text-[10px] font-black tracking-widest text-brandTextMuted uppercase group-hover:text-brandAccent transition-colors">
+                        View Blueprint &rarr;
+                    </span>
+                </div>
+            </div>
+
+            <!-- 06. Consultation -->
+            <div onclick="openModal('consulting')" class="border border-brandBorder p-8 bg-brandCard flex flex-col justify-between hover:border-brandAccent transition-all group cursor-pointer">
+                <div>
+                    <span class="text-xs font-mono font-bold text-brandTextDeep group-hover:text-brandAccent">06 // STRATEGY DIRECTIVE</span>
+                    <h3 class="text-lg font-bold text-white uppercase mt-3 mb-4">Consultation</h3>
+                    <p class="text-xs text-brandTextMuted font-light leading-relaxed">Corporate restructuring, internal vulnerability metrics, supply path designs, and B-BBEE modeling.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-[#16161A] flex justify-end">
+                    <span class="text-[10px] font-black tracking-widest text-brandTextMuted uppercase group-hover:text-brandAccent transition-colors">
+                        View Blueprint &rarr;
+                    </span>
+                </div>
+            </div>
+
+            <!-- 07. Risk & Insurance -->
+            <div onclick="openModal('insurance')" class="border border-brandBorder p-8 bg-brandCard flex flex-col justify-between hover:border-brandAccent transition-all group cursor-pointer">
+                <div>
+                    <span class="text-xs font-mono font-bold text-brandTextDeep group-hover:text-brandAccent">07 // LIABILITY MITIGATION</span>
+                    <h3 class="text-lg font-bold text-white uppercase mt-3 mb-4">Risk & Insurance</h3>
+                    <p class="text-xs text-brandTextMuted font-light leading-relaxed">Contractor asset indemnities underwritten for specialized machinery configurations and fleet groups.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-[#16161A] flex justify-end">
+                    <span class="text-[10px] font-black tracking-widest text-brandTextMuted uppercase group-hover:text-brandAccent transition-colors">
+                        View Blueprint &rarr;
+                    </span>
+                </div>
+            </div>
+
+            <!-- 08. Town Runners -->
+            <div onclick="openModal('runners')" class="border border-brandBorder p-8 bg-brandCard flex flex-col justify-between hover:border-brandAccent transition-all group cursor-pointer">
+                <div>
+                    <span class="text-xs font-mono font-bold text-brandTextDeep group-hover:text-brandAccent">08 // LOGISTICAL COURIER</span>
+                    <h3 class="text-lg font-bold text-white uppercase mt-3 mb-4">Town Runners</h3>
+                    <p class="text-xs text-brandTextMuted font-light leading-relaxed">Last-mile B2B regional package acquisition networks bridging key commerce nodes across Tzaneen.</p>
+                </div>
+                <div class="mt-8 pt-4 border-t border-[#16161A] flex justify-end">
+                    <span class="text-[10px] font-black tracking-widest text-brandTextMuted uppercase group-hover:text-brandAccent transition-colors">
+                        View Blueprint &rarr;
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section class="max-w-7xl mx-auto px-6 py-24 border-b border-brandBorder">
+        <div class="mb-12">
+            <span class="text-xs font-bold uppercase tracking-widest text-brandTextDeep font-mono">Performance Validation</span>
+            <h2 class="text-3xl font-black text-white uppercase mt-2">Verified Corporate References</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="border border-brandBorder p-8 bg-brandCard">
+                <div class="text-brandAccent text-sm tracking-wider mb-4">★★★★★</div>
+                <p class="text-sm text-brandTextMuted font-light leading-relaxed mb-6">"The real-time incident tracking telemetry constructed by the digital division integrated seamlessly into our regional operations center. Highly technical delivery."</p>
+                <p class="text-xs font-bold uppercase tracking-widest text-white">Bopha Aura Intelligence</p>
+                <p class="text-[10px] text-brandTextDeep uppercase font-bold mt-0.5">Tactical Command Operations Center</p>
+            </div>
+            <div class="border border-brandBorder p-8 bg-brandCard">
+                <div class="text-brandAccent text-sm tracking-wider mb-4">★★★★★</div>
+                <p class="text-sm text-brandTextMuted font-light leading-relaxed mb-6">"Their compliance wing clear
